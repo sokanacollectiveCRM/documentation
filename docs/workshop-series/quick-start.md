@@ -9,7 +9,7 @@ Get started with the DISC Workshop Series Website quickly. This guide focuses on
 
 ## Quick Setup
 
-If you haven't installed the project yet, follow our [Installation Guide](/docs/getting-started/installation).
+If you haven't installed the project yet, follow our [Installation Guide](/workshop-series/installation).
 
 ## Website Structure and Routes
 
@@ -197,5 +197,5 @@ Example usage:
 
 After getting familiar with the basics:
 
-1. Review the complete [Project Structure](/docs/getting-started/project-structure)
-2. Check out our [Contributing Guidelines](/docs/contributing/guidelines)
+1. Review the complete [Project Structure](/workshop-series/project-structure)
+2. Check out our [Contributing Guidelines](/workshop-series/contributing)
