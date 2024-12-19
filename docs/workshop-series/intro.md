@@ -38,17 +38,8 @@ The project follows a modular structure:
 
 ## Quick Links
 
-- 📚 [Getting Started](/docs/getting-started/installation)
-- 🏗️ [Architecture Overview](/docs/architecture/overview)
-- 📝 [Content Management](/docs/content-management/adding-content)
-- 🚀 [Deployment Guide](/docs/deployment/vercel-deployment)
-- 👥 [Contributing Guidelines](/docs/contributing/guidelines)
-
-## Looking for Help?
-
-If you're looking to:
-
-- Set up the project locally → Check the [Quick Start Guide](/docs/getting-started/quick-start)
-- Add new content → Visit [Content Management](/docs/content-management/adding-content)
-- Deploy changes → See [Deployment Guide](/docs/deployment/vercel-deployment)
-- Contribute → Read our [Contributing Guidelines](/docs/contributing/guidelines)
+- 📚 [Getting Started](/workshop-series/installation)
+- 🏗️ [Project Overview & Quick Start](/workshop-series/quick-start)
+- 📝 [Content Structure](/workshop-series/project-structure)
+- 🚀 [Installation Guide](/workshop-series/installation)
+- 👥 [Contributing Guidelines](/workshop-series/contributing)

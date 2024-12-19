@@ -147,14 +147,16 @@ We recommend installing these tools for better development experience:
 
 Now that you have the project set up locally, you can:
 
-1. Review the [Project Structure](/docs/getting-started/project-structure) documentation
-2. Learn about [Content Management](/docs/content-management/adding-content)
-3. Check out our [Contributing Guidelines](/docs/contributing/guidelines)
+1. Review the [Project Structure](/workshop-series/project-structure) documentation
+2. Learn about [how to quickly start working on our project](/workshop-series/quick-start)
+3. Check out our [Contributing Guidelines](/workshop-series/contributing)
 
 ## Need Help?
 
 If you encounter any issues during installation:
 
-1. Check our [FAQ](/docs/getting-started/faq) section
-2. Create an issue on GitHub
-3. Reach out to the development team
+<!-- 1. Check our [FAQ](/docs/getting-started/faq) section -->
+
+- Create an issue on GitHub
+- Reach out to the development team:
+  - [Ethan Pineda](mailto:ethanpineda2025@u.northwestern.edu)
