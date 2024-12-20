@@ -29,6 +29,7 @@ const config: Config = {
           id: "workshop-series",
           path: "docs/workshop-series",
           routeBasePath: "/",
+
           sidebarPath: require.resolve("./sidebars.workshop-series.ts"),
           editUrl:
             "https://github.com/DISC-NU/DISC-Documentation-Website/tree/main",
