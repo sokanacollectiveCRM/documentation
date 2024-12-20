@@ -147,15 +147,13 @@ We recommend installing these tools for better development experience:
 
 Now that you have the project set up locally, you can:
 
-1. Review the [Project Structure](/workshop-series/project-structure) documentation
-2. Learn about [how to quickly start working on our project](/workshop-series/quick-start)
-3. Check out our [Contributing Guidelines](/workshop-series/contributing)
+1. Review the [Project Structure](/project-structure) documentation
+2. Learn about [how to quickly start working on our project](/quick-start)
+3. Check out our [Contributing Guidelines](/contributing)
 
 ## Need Help?
 
 If you encounter any issues during installation:
-
-<!-- 1. Check our [FAQ](/docs/getting-started/faq) section -->
 
 - Create an issue on GitHub
 - Reach out to the development team:
