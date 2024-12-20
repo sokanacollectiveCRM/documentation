@@ -21,6 +21,12 @@ const config: Config = {
     locales: ["en"],
   },
 
+  markdown: {
+    mermaid: true,
+  },
+
+  themes: ["@docusaurus/theme-mermaid"],
+
   presets: [
     [
       "classic",
@@ -121,7 +127,7 @@ const config: Config = {
             },
             {
               label: "DISC Website",
-              href: "https://disc-nu.github.io/disc-website/",
+              href: "/disc-website/intro",
             },
             {
               label: "Discover Program Template",
