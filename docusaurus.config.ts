@@ -28,11 +28,13 @@ const config: Config = {
         docs: {
           id: "workshop-series",
           path: "docs/workshop-series",
-          routeBasePath: "workshop-series",
+          routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.workshop-series.ts"),
           editUrl:
             "https://github.com/DISC-NU/DISC-Documentation-Website/tree/main",
         },
+        blog: false,
+        pages: false,
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -71,10 +73,11 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "DISC Documentation",
+      title: "Develop & Innovate for Social Change",
       logo: {
         alt: "DISC Logo",
-        src: "img/logo.svg",
+        src: "img/disc-logo.png",
+        href: "https://disc-nu.github.io/disc-website/",
       },
       items: [
         {
@@ -113,11 +116,11 @@ const config: Config = {
           items: [
             {
               label: "Workshop Series",
-              to: "/workshop-series/intro",
+              to: "/intro",
             },
             {
               label: "DISC Website",
-              to: "/disc-website/intro",
+              href: "https://disc-nu.github.io/disc-website/",
             },
             {
               label: "Discover Program Template",
@@ -139,7 +142,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} DISC Northwestern. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Develop and Innovate for Social Change`,
     },
     prism: {
       theme: prismThemes.github,
