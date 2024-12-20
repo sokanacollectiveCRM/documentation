@@ -117,7 +117,7 @@ const config: Config = {
           items: [
             {
               label: "Workshop Series",
-              to: "/intro",
+              to: "/",
             },
             {
               label: "DISC Website",
