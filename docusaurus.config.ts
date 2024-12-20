@@ -27,7 +27,7 @@ const config: Config = {
       {
         docs: {
           id: "workshop-series",
-          path: "docs/",
+          path: "docs/workshop-series",
           routeBasePath: "/",
           sidebarPath: require.resolve("./sidebars.workshop-series.ts"),
           editUrl:
