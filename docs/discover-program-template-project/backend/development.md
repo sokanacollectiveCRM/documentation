@@ -24,10 +24,12 @@ The backend service is built with:
 Create a `.env` file with the following variables:
 
 ```bash
-FRONTEND_URL=http://localhost:3001
+FRONTEND_URL=your_DEPLOYED_frontend_url_on_vercel
+FRONTEND_URL_DEV=localhost:3001
 SUPABASE_URL=your_supabase_url
 SUPABASE_ANON_KEY=your_supabase_key
 PORT=3000
+API_URL=http://localhost:5050
 NODE_ENV=development
 ```
 
