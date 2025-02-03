@@ -8,7 +8,7 @@ const config: Config = {
   favicon: "img/favicon.ico",
 
   url: "https://docs.discnu.org",
-  baseUrl: "/DISC-Documentation-Website/",
+  baseUrl: "/",
 
   organizationName: "DISC-NU",
   projectName: "DISC-Documentation-Website",
