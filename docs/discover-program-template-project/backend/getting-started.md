@@ -18,24 +18,74 @@ Before you begin, make sure you have:
 
 ## Installation
 
-1. Clone the repository:
+0. Setup directories
 
 ```bash
+cd # whereever you want your code to live in, make sure you can easily access this in the future
+mkdir disc-template
+```
+
+1. Clone the repositories:
+
+```bash
+git clone https://github.com/disc-template/frontend.git
 git clone https://github.com/disc-template/backend.git
-cd backend
 ```
 
-2. Install dependencies:
+2. Install dependencies for the frontend:
 
 ```bash
-npm install
+cd frontend
+npm i
 ```
 
-3. Copy `.env.example` to `.env`:
+3. Install dependencie for the backend
+
+```bash
+cd backend
+npm i
+```
+
+4. Copy `.env.example` to `.env`:
 
 ```bash
 cp .env.example .env
 ```
+
+5. Create `.env` files (in both frontend and backend repos)
+
+```bash
+# cd into the root directory of wherever the template live
+# if following steps exactly:
+cd ..
+touch frontend/.env && touch backend/.env
+```
+
+6. Create `.env` variables
+
+#### Frontend `env` example:
+
+```javascript
+REACT_APP_BACKEND_URL=http://localhost:5050
+```
+
+#### Backend `env` example:
+
+```javascript
+SUPABASE_URL= #your supabase url here
+SUPABASE_ANON_KEY= # your supabase anon key here
+PORT=5050 # this is the default that we used when making the template
+FRONTEND_URL=http://localhost:3001 # this is the default we used when making the template
+API_URL=http://localhost:5050 # this is the default we used when making the template
+FRONTEND_URL_DEV=http://localhost:3001 # this is the default we used when making the template
+NODE_ENV=development # NOTE: you should change this to `production` when you deploy to vercel!!!!
+```
+
+:::info
+
+you can also just use the `.env.example` `.env` files in both repos. Just create a `.env` file in both directories and copy and paste the keys and default values
+
+:::
 
 ## Supabase Setup
 
@@ -61,50 +111,116 @@ CREATE TABLE users (
 );
 ```
 
-### 3. Configure Authentication
+<!-- ### 3. Configure Authentication
 
 1. Go to Authentication settings in Supabase dashboard
 2. Enable Email auth provider
-3. Configure Email templates (optional)
-4. Set Site URL to your frontend URL
+3. Configure Email templates (optional) _do not worry about this for now please_
+4. Set Site URL to your frontend URL \_this is going to be localhost to start off, you will change it to your deployed url on vercel later -->
+
+### 3. Configure Authentication
+
+1. Go to Authentication settings in Supabase dashboard:
+
+   - Log into your Supabase account
+
+   - Select your project
+
+   - Click on "Authentication" in the left sidebar
+
+   - Click on "Providers" tab
+
+2. Enable Email auth provider:
+
+   - Find "Email" in the list of providers
+
+   - Toggle the switch to enable it
+
+   - Under "Email Provider Settings", keep defaults for now
+
+3. Set Site URL to your frontend URL:
+
+   - In the left sidebar, click on "URL Configuration"
+
+   - For Site URL, enter: http://localhost:3001
+
+   - Save changes
+
+   - Note: You'll update this to your Vercel URL after deployment
 
 ## Google OAuth Setup
 
-### 1. Google Cloud Console
+:::info
+Note that for this section, you will _not_ be able to do the following steps with your northwestern email! Either create a new gmail account for a team or delegate someone to be the sole owner of the google cloud console
+:::
 
-1. Create a new project in [Google Cloud Console](https://console.cloud.google.com/)
-2. Enable Google OAuth API
-3. Configure OAuth consent screen
-4. Create OAuth 2.0 Client ID
-   - Add authorized redirect URIs:
+### 1. Google Cloud Console Setup
+
+1. Create a new project:
+
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Click the project dropdown at the top
+   - Click "New Project"
+   - Enter a project name and click "Create"
+
+2. Enable Google OAuth API:
+
+   - In the left sidebar, go to "APIs & Services" > "Library"
+   - Search for "Google OAuth2"
+   - Click on "Google OAuth2 API"
+   - Click "Enable"
+
+3. Configure OAuth consent screen:
+
+   - Go to "APIs & Services" > "OAuth consent screen"
+   - Choose "External" user type
+   - Fill in required fields:
+     - App name
+     - User support email
+     - Developer contact email
+   - For Scopes, add: "email" and "profile"
+   - Skip adding test users for now
+   - Click "Save and Continue" through remaining steps
+
+4. Create OAuth 2.0 Client ID:
+   - Go to "APIs & Services" > "Credentials"
+   - Click "Create Credentials" > "OAuth client ID"
+   - Choose "Web application" as Application type
+   - Name your client
+   - Add these Authorized redirect URIs:
      - `[YOUR_SUPABASE_URL]/auth/v1/callback`
-     - `http://localhost:3000/auth/callback` (for development)
+       (Find your Supabase URL in your project settings)
+     - `http://localhost:3000/auth/callback`
+   - Click "Create"
+   - **Important**: Save the Client ID and Client Secret that appear - you'll need these for Supabase
 
 ### 2. Supabase OAuth Configuration
 
-1. Go to Authentication > Providers in Supabase
-2. Enable Google provider
-3. Add Client ID and Client Secret from Google Cloud Console
+1. Configure Google provider in Supabase:
+   - In your Supabase dashboard, go to Authentication > Providers
+   - Find Google in the list
+   - Toggle to enable it
+   - Paste your Google Client ID and Client Secret from the previous step
+   - Save changes
 
-## Environment Variables
+### 3. Verify Setup
 
-Create `.env` file with:
+1. Your authentication should now be configured for both email and Google login
+2. Test both methods in development:
+   - Run your frontend locally (`npm run dev`)
+   - Try creating an account with email
+   - Try signing in with Google
+   - If either fails, double-check all URLs and credentials
 
-```bash
-FRONTEND_URL=http://localhost:3001
-SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_anon_key
-PORT=3000
-NODE_ENV=development
-```
-
-## Start Development Server
+## Start Development Server (same for frontend and backend)
 
 ```bash
 npm run dev
 ```
 
-Server will start at `http://localhost:3000`
+Backend server will start at `http://localhost:5050`
+
+Frontend server will start at `http://localhost:3001`
 
 ## Development Tools
 
