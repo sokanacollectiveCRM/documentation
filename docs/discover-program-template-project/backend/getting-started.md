@@ -236,9 +236,3 @@ Frontend server will start at `http://localhost:3001`
 - `npm test` - Run tests
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
-
-## Next Steps
-
-- Review the [Project Structure](./project-structure.md)
-- Check the [Contributing Guide](./contributing.md)
-- Set up your [Development Environment](./development.md)

@@ -218,7 +218,9 @@ Note that for this section, you will _not_ be able to do the following steps wit
 npm run dev
 ```
 
-Server will start at `http://localhost:3000`
+Backend server will start at `http://localhost:5050`
+
+Frontend server will start at `http://localhost:3001`
 
 ## Development Tools
 
@@ -234,9 +236,3 @@ Server will start at `http://localhost:3000`
 - `npm test` - Run tests
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
-
-## Next Steps
-
-- Review the [Project Structure](./project-structure.md)
-- Check the [Contributing Guide](./contributing.md)
-- Set up your [Development Environment](./development.md)
