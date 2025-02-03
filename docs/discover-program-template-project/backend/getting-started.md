@@ -18,20 +18,35 @@ Before you begin, make sure you have:
 
 ## Installation
 
-1. Clone the repository:
+0. Setup directories
 
 ```bash
+cd # whereever you want your code to live in, make sure you can easily access this in the future
+mkdir disc-template
+```
+
+1. Clone the repositories:
+
+```bash
+git clone https://github.com/disc-template/frontend.git
 git clone https://github.com/disc-template/backend.git
-cd backend
 ```
 
-2. Install dependencies:
+2. Install dependencies for the frontend:
 
 ```bash
-npm install
+cd frontend
+npm i
 ```
 
-3. Copy `.env.example` to `.env`:
+3. Install dependencie for the backend
+
+```bash
+cd backend
+npm i
+```
+
+4. Copy `.env.example` to `.env`:
 
 ```bash
 cp .env.example .env
