@@ -7,7 +7,7 @@ const config: Config = {
   tagline: "Documentation for DISC Projects",
   favicon: "img/favicon.ico",
 
-  url: "https://disc-nu.github.io",
+  url: "https://docs.discnu.org",
   baseUrl: "/DISC-Documentation-Website/",
 
   organizationName: "DISC-NU",
