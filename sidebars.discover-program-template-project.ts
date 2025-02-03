@@ -9,6 +9,11 @@ const discoverProgramSidebar: SidebarsConfig = {
     },
     {
       type: "doc",
+      id: "overview",
+      label: "Overview",
+    },
+    {
+      type: "doc",
       id: "getting-started",
       label: "Getting Started",
     },
@@ -16,11 +21,6 @@ const discoverProgramSidebar: SidebarsConfig = {
       type: "category",
       label: "Backend",
       items: [
-        {
-          type: "doc",
-          id: "backend/getting-started",
-          label: "Getting Started",
-        },
         {
           type: "doc",
           id: "backend/project-structure",
@@ -47,11 +47,6 @@ const discoverProgramSidebar: SidebarsConfig = {
       type: "category",
       label: "Frontend",
       items: [
-        {
-          type: "doc",
-          id: "frontend/getting-started",
-          label: "Getting Started",
-        },
         {
           type: "doc",
           id: "frontend/project-structure",
