@@ -10,32 +10,39 @@ This guide will walk you through setting up your team's development environment 
 
 ## Repository Setup
 
-### Initial Setup by Tech Lead
+### Creating Your GitHub Account
 
-1. The team's tech lead will receive access to the `disc-template` GitHub organization
-2. Tech lead needs to create two new repositories by copying from our templates:
+1. Each team needs to create their own GitHub account at https://github.com/signup if they don't already have one
+2. Complete your GitHub profile setup and verify your email address
+
+### Forking the Template Repositories
+
+Each team member needs to:
+
+1. Navigate to the template repositories:
    - Frontend: `https://github.com/disc-template/frontend`
    - Backend: `https://github.com/disc-template/backend`
+2. Click the "Fork" button in the top-right corner of each repository
+3. Select your personal GitHub account as the destination for the fork
 
 ```mermaid
 graph TB
-    A[disc-template/frontend] -->|Copy| B[your-team/frontend]
-    C[disc-template/backend] -->|Copy| D[your-team/backend]
+    A[disc-template/frontend] -->|Fork| B[your-account/frontend]
+    C[disc-template/backend] -->|Fork| D[your-account/backend]
     B -->|Deploy| E[Vercel Frontend]
     D -->|Deploy| F[Vercel Backend]
 ```
 
-### Team Access
+### Setting Up Local Environment
 
-1. Tech lead adds team members as collaborators to both repositories
-2. Each team member then:
+After forking, each team member should:
 
 ```bash
-# Clone frontend repository
-git clone https://github.com/your-team-name/frontend.git
+# Clone your forked frontend repository
+git clone https://github.com/your-username/frontend.git
 
-# Clone backend repository
-git clone https://github.com/your-team-name/backend.git
+# Clone your forked backend repository
+git clone https://github.com/your-username/backend.git
 ```
 
 ## Development Workflow
@@ -64,8 +71,29 @@ git commit -m "feat: description"
 git push origin feature/your-feature-name
 ```
 
-3. Create Pull Request and get reviews
-4. Merge to main triggers automatic deployment
+3. Create Pull Request:
+
+   - Go to your forked repository on GitHub
+   - Click "Pull Request"
+   - Set the base repository to your team's main repository
+   - Get reviews from team members
+
+4. After approval, merge to main to trigger automatic deployment
+
+## Staying in Sync with Template Updates
+
+To keep your fork updated with any changes from the template:
+
+```bash
+# Add the template repository as a remote
+git remote add template https://github.com/disc-template/frontend.git  # or backend
+
+# Fetch updates from template
+git fetch template
+
+# Merge template changes into your main branch
+git merge template/main
+```
 
 ## Why This Structure?
 
@@ -75,8 +103,10 @@ Our repository structure is designed to:
 - Maintain separate environments for each team
 - Keep codebase organized and manageable
 - Enable proper code review processes
+- Allow individual contributions through personal forks
 
 ## Next Steps
 
 - Set up the [Backend Environment](./backend/getting-started)
-  º
+- Configure your Vercel deployment
+- Start collaborating with your team

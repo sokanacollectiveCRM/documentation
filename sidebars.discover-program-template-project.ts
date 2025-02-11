@@ -19,6 +19,32 @@ const discoverProgramSidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Frontend",
+      items: [
+        {
+          type: "doc",
+          id: "frontend/project-structure",
+          label: "Project Structure",
+        },
+        {
+          type: "doc",
+          id: "frontend/development",
+          label: "Development Guide",
+        },
+        {
+          type: "doc",
+          id: "frontend/deployment",
+          label: "Deployment",
+        },
+        {
+          type: "doc",
+          id: "frontend/contributing",
+          label: "Contributing",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Backend",
       items: [
         {
@@ -45,27 +71,22 @@ const discoverProgramSidebar: SidebarsConfig = {
     },
     {
       type: "category",
-      label: "Frontend",
+      label: "Project Management",
       items: [
         {
           type: "doc",
-          id: "frontend/project-structure",
-          label: "Project Structure",
+          id: "project-management/project-management",
+          label: "Communication",
         },
         {
           type: "doc",
-          id: "frontend/development",
-          label: "Development Guide",
+          id: "project-management/issue-tracking",
+          label: "Issue Tracking",
         },
         {
           type: "doc",
-          id: "frontend/deployment",
-          label: "Deployment",
-        },
-        {
-          type: "doc",
-          id: "frontend/contributing",
-          label: "Contributing",
+          id: "project-management/pull-requests",
+          label: "Pull Requests",
         },
       ],
     },
