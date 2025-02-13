@@ -75,11 +75,6 @@ const discoverProgramSidebar: SidebarsConfig = {
       items: [
         {
           type: "doc",
-          id: "project-management/project-management",
-          label: "Communication",
-        },
-        {
-          type: "doc",
           id: "project-management/issue-tracking",
           label: "Issue Tracking",
         },
@@ -87,6 +82,11 @@ const discoverProgramSidebar: SidebarsConfig = {
           type: "doc",
           id: "project-management/pull-requests",
           label: "Pull Requests",
+        },
+        {
+          type: "doc",
+          id: "project-management/project-management",
+          label: "Branch Protections",
         },
       ],
     },
