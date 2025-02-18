@@ -23,8 +23,8 @@ if you are not the member of your team responsible for setting up the starter te
 Next, you need too:
 
 1. Navigate to the template repositories:
-   - Frontend: `https://github.com/disc-template/frontend`
-   - Backend: `https://github.com/disc-template/backend`
+   - Frontend: https://github.com/disc-template/frontend
+   - Backend: https://github.com/disc-template/backend
 2. Click the "Fork" button in the top-right corner of each repository
 3. Select your personal GitHub account as the destination for the fork
 
@@ -58,8 +58,8 @@ mkdir disc-template
 1. Clone the repositories:
 
 ```bash
-git clone https://github.com/disc-template/frontend.git
-git clone https://github.com/disc-template/backend.git
+git clone https://github.com/YOUR_NEW_GITHUB_ACCOUNT/frontend.git
+git clone https://github.com/YOUR_NEW_GITHUB_ACCOUNT/backend.git
 ```
 
 2. Install dependencies for the frontend:
@@ -69,43 +69,38 @@ cd frontend
 npm i
 ```
 
-3. Install dependencie for the backend
+3. Create the `.env` file for the frontend
 
 ```bash
-cd backend
-npm i
+touch .env
 ```
 
-4. Copy `.env.example` to `.env`:
-
-```bash
-cp .env.example .env
-```
-
-5. Create `.env` files (in both frontend and backend repos)
-
-```bash
-# cd into the root directory of wherever the template live
-# if following steps exactly:
-cd ..
-touch frontend/.env && touch backend/.env
-```
-
-6. Create `.env` variables
-
-:::info
-
-you can also just use the `.env.example` `.env` files in both repos. Just create a `.env` file in both directories and copy and paste the keys and default values
-
-:::
-
-#### Frontend `env` example:
+4. Copy this template for the frontend `.env`
 
 ```javascript
 REACT_APP_BACKEND_URL=http://localhost:5050
 ```
 
-#### Backend `env` example:
+5. Change directories into the backend
+
+```bash
+cd ..
+cd backend
+```
+
+6. Install dependencies for the backend
+
+```bash
+npm i
+```
+
+7. Create `.env` file for the backend
+
+```bash
+touch .env
+```
+
+8. Copt this template for the backend `.env`
 
 ```javascript
 SUPABASE_URL= #your supabase url here
