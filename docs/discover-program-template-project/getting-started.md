@@ -112,12 +112,6 @@ FRONTEND_URL_DEV=http://localhost:3001 # this is the default we used when making
 NODE_ENV=development # NOTE: you should change this to `production` when you deploy to vercel!!!!
 ```
 
-:::note
-
-After you setup and verified your `.env` variables, share your credentials in a **private channel** with the rest of your team
-
-:::
-
 ## Supabase Setup
 
 ### 1. Create a Project
@@ -234,16 +228,11 @@ Note that for this section, you will _not_ be able to do the following steps wit
    - Paste your Google Client ID and Client Secret from the previous step
    - Save changes
 
-### 3. Verify Setup
+## Verify Setup
 
-1. Your authentication should now be configured for both email and Google login
-2. Test both methods in development:
-   - Run your frontend locally (`npm run dev`)
-   - Try creating an account with email
-   - Try signing in with Google
-   - If either fails, double-check all URLs and credentials
+For both the frontend and backend directories just do the following:
 
-## Start Development Server (same for frontend and backend)
+_you will probably need to open two terminals for this!_
 
 ```bash
 npm run dev
@@ -252,6 +241,23 @@ npm run dev
 Backend server will start at `http://localhost:5050`
 
 Frontend server will start at `http://localhost:3001`
+
+1. Your authentication should now be configured for both email and Google login
+2. Test both methods in development:
+   - Run your frontend locally (`npm run dev`)
+   - Try creating an account with email
+   - Try signing in with Google
+   - If either fails, double-check all URLs and credentials
+
+After you have gone through all of these steps, you should be able to create users, see them populate on Supabase, and have them displayed on your web app after logging in.
+
+You should also get emails from Supabase whenever you first sign-up and requests a password. All of the respective pages on the frontend should work with this as well.
+
+:::note
+
+Once you have verified that **everything** works, share the `.env` credentials with the rest of your team!!!
+
+:::
 
 ## Development Tools
 
