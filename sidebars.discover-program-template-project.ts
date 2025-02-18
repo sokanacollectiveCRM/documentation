@@ -14,6 +14,27 @@ const discoverProgramSidebar: SidebarsConfig = {
     },
     {
       type: "category",
+      label: "Project Management",
+      items: [
+        {
+          type: "doc",
+          id: "project-management/issue-tracking",
+          label: "Issue Tracking",
+        },
+        {
+          type: "doc",
+          id: "project-management/project-management",
+          label: "Branch Protections",
+        },
+        {
+          type: "doc",
+          id: "project-management/pull-requests",
+          label: "Pull Requests",
+        },
+      ],
+    },
+    {
+      type: "category",
       label: "Frontend",
       items: [
         {
@@ -61,27 +82,6 @@ const discoverProgramSidebar: SidebarsConfig = {
           type: "doc",
           id: "backend/contributing",
           label: "Contributing",
-        },
-      ],
-    },
-    {
-      type: "category",
-      label: "Project Management",
-      items: [
-        {
-          type: "doc",
-          id: "project-management/issue-tracking",
-          label: "Issue Tracking",
-        },
-        {
-          type: "doc",
-          id: "project-management/pull-requests",
-          label: "Pull Requests",
-        },
-        {
-          type: "doc",
-          id: "project-management/project-management",
-          label: "Branch Protections",
         },
       ],
     },
