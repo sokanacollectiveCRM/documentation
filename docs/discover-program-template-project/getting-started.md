@@ -6,6 +6,36 @@ sidebar_position: 1
 
 # Getting Started
 
+:::info
+
+**This entire setup should setup should be done only by _one person_ on the team** It should take anywhere between 3-6 hours to complete
+
+if you are not the member of your team responsible for setting up the starter template, scroll to the bottom
+:::
+
+### Creating Your GitHub Account
+
+1. You need to create your own GitHub account (unless one was provided to you from your client) at https://github.com/signup if they don't already have one
+2. Complete your GitHub profile setup and verify your email address
+
+### Forking the Template Repositories
+
+Next, you need too:
+
+1. Navigate to the template repositories:
+   - Frontend: `https://github.com/disc-template/frontend`
+   - Backend: `https://github.com/disc-template/backend`
+2. Click the "Fork" button in the top-right corner of each repository
+3. Select your personal GitHub account as the destination for the fork
+
+```mermaid
+graph TB
+    A[disc-template/frontend] -->|Fork| B[your-account/frontend]
+    C[disc-template/backend] -->|Fork| D[your-account/backend]
+    B -->|Deploy| E[Vercel Frontend]
+    D -->|Deploy| F[Vercel Backend]
+```
+
 ## Prerequisites
 
 Before you begin, make sure you have:
@@ -63,6 +93,12 @@ touch frontend/.env && touch backend/.env
 
 6. Create `.env` variables
 
+:::info
+
+you can also just use the `.env.example` `.env` files in both repos. Just create a `.env` file in both directories and copy and paste the keys and default values
+
+:::
+
 #### Frontend `env` example:
 
 ```javascript
@@ -81,9 +117,9 @@ FRONTEND_URL_DEV=http://localhost:3001 # this is the default we used when making
 NODE_ENV=development # NOTE: you should change this to `production` when you deploy to vercel!!!!
 ```
 
-:::info
+:::note
 
-you can also just use the `.env.example` `.env` files in both repos. Just create a `.env` file in both directories and copy and paste the keys and default values
+After you setup and verified your `.env` variables, share your credentials in a **private channel** with the rest of your team
 
 :::
 
