@@ -272,3 +272,11 @@ Frontend server will start at `http://localhost:3001`
 - `npm test` - Run tests
 - `npm run lint` - Run ESLint
 - `npm run format` - Format code with Prettier
+
+## Instructions for Everyone Else
+
+If you are **not** the member of your team who did all of the steps from above:
+
+1. Clone the _forked_ repos from the github account that setup all of the accounts and projects for you
+2. Get the respective `env` variables.
+3. Verify that everything is running locally
