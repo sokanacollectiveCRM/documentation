@@ -235,7 +235,7 @@ For both the frontend and backend directories just do the following:
 _you will probably need to open two terminals for this!_
 
 ```bash
-npm run dev
+npm start
 ```
 
 Backend server will start at `http://localhost:5050`
