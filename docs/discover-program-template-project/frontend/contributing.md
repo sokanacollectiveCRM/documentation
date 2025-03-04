@@ -24,6 +24,9 @@ cd disc-website
 npm install
 ```
 
+4. Read the `README.md` file and follow the instructions in there
+   to set up Prettier and ESLint
+
 ## Development Process
 
 1. Create a new branch:
@@ -48,9 +51,9 @@ npm run format:check
 
 The `main` branch is protected with the following rules:
 
-- All PRs must be reviewed by at least one code owner
-- All CI/CD checks must pass before merging
-- Direct pushes to `main` are not allowed
+* All PRs must be reviewed by at least one code owner
+* All CI/CD checks must pass before merging
+* Direct pushes to `main` are not allowed
 
 ## Code Owners
 
@@ -67,27 +70,29 @@ All pull requests must be approved by at least one code owner before merging.
 
 ### File Organization
 
-- Place new components in appropriate directories under `src/`
-- Keep files focused and single-purpose
-- Follow the established project structure
+* Place new components in appropriate directories under `src/`
+* Keep files focused and single-purpose
+* Follow the established project structure
 
 ### Component Guidelines
 
-- Use `.jsx` extension for files containing JSX
-- Define PropTypes for all props
-- Keep components modular and reusable
-- Write meaningful comments for complex logic
+* Use `.jsx` extension for files containing JSX
+* Define PropTypes for all props
+* Keep components modular and reusable
+* Write meaningful comments for complex logic
 
 ### Code Style
 
-- Follow ESLint and Prettier configurations
-- Use proper import ordering:
+See the `README.md` file in the frontend project code for more details.
+
+* Follow ESLint and Prettier configurations
+* Use proper import ordering:
   1. React imports
   2. Third-party modules
   3. Absolute paths from `src/`
   4. Relative paths
-- Use meaningful variable and function names
-- Write clear, concise comments
+* Use meaningful variable and function names
+* Write clear, concise comments
 
 ## Pull Request Guidelines
 
@@ -159,24 +164,24 @@ Fill out all sections of the template to help reviewers understand and evaluate 
 
 ## Getting Help
 
-- Join our [Discord](https://discord.gg/mqRQ7s9CyS)
-- Check existing [issues](https://github.com/DISC-NU/disc-website/issues)
-- Ask questions in your pull request
-- Reach out to code owners for guidance
+* Join our [Discord](https://discord.gg/mqRQ7s9CyS)
+* Check existing [issues](https://github.com/DISC-NU/disc-website/issues)
+* Ask questions in your pull request
+* Reach out to code owners for guidance
 
 ## Additional Resources
 
-- [Project Structure](./project-structure.md)
-- [Development Guide](./development.md)
-- [React Documentation](https://reactjs.org/)
-- [ESLint Documentation](https://eslint.org/)
-- [Prettier Documentation](https://prettier.io/)
+* [Project Structure](./project-structure.md)
+* [Development Guide](./development.md)
+* [React Documentation](https://reactjs.org/)
+* [ESLint Documentation](https://eslint.org/)
+* [Prettier Documentation](https://prettier.io/)
 
 ## Next Steps
 
 After your first contribution:
 
-- Review our [Deployment Guide](./deployment.md)
-- Check out open issues for more ways to help
-- Help review other PRs
-- Share feedback for improvement
+* Review our [Deployment Guide](./deployment.md)
+* Check out open issues for more ways to help
+* Help review other PRs
+* Share feedback for improvement
