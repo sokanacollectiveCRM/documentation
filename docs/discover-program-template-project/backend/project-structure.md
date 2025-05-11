@@ -6,22 +6,26 @@ sidebar_position: 2
 
 # Backend Project Structure
 
-The backend template follows a modular architecture designed to be scalable and maintainable. This document will explain the organization of the project and the purpose of each directory.
+The backend template follows a domain driven design designed to be scalable and maintainable. Because this format requires some knowledge of DDD, please do the research on its principles before contributing. This document will explain the organization of the project and the purpose of each directory.
 
 ## Directory Overview
 
 ```bash
 backend/
 ├── src/
-│   ├── config/         # Configuration files
-│   │   └── supabase.js # Database configuration
-│   ├── controllers/    # Business logic
-│   │   └── authController.js
-│   ├── middleware/     # Request processing
-│   │   └── authMiddleware.js
-│   ├── routes/         # API endpoints
-│   │   └── authRoutes.js
-│   └── server.js       # Main server file
+│   ├── controllers/    # Entry for requests
+│   ├── domains/        # errors and processing (typically stores business logic, but structure was not followed during development)
+│   ├── entities/       # business logic
+│   ├── middleware/     # authentication/role checking
+│   └── repositories/   # database handling
+│   └── routes/         # route handling
+│   └── services/       # basic supabase services
+│   └── usecase/        # error checking and forwarding
+│   └── index.ts        # class instantiation
+│   └── server.ts       # root entry
+│   └── supabase.ts     # supabase client
+│   └── types.ts        # type definition
+
 ```
 
 ## Core Directories

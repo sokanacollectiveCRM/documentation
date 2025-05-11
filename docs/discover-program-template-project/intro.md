@@ -1,38 +1,28 @@
 ---
 id: intro
-title: DISCover Program Template Project
+title: Introduction
 sidebar_position: 1
 ---
 
-# DISCover Program Template Project
+# Sokana CRM Introduction
 
-Welcome to the DISCover Program Template Project documentation! This template serves as the foundation for all web applications developed during the DISC Discover Program, ensuring consistency and quality across team projects.
+Welcome to the Sokana CRM codebase! This guide will serve to help you get the project up and running, and it will provide details on tech stack + next steps.
 
 ## Overview
 
 The DISCover Program Template Project provides a standardized web application structure that combines modern technologies and best practices. It consists of two main components:
 
-- **Frontend Template**: A React-based application template with pre-configured routing, styling, and authentication
+- **Frontend Template**: A React-based application template using Typescript. This section contains all the logic for routing and UI elements.
 - **Backend Template**: An Express.js server template with database integration, authentication, and API scaffolding
-
-## Why a Standard Template?
-
-This template was created to:
-
-- Ensure consistent development practices across all Discover Program teams
-- Reduce initial setup time for new projects
-- Provide a solid foundation with industry-standard tools and practices
-- Make it easier for tech leads to support multiple teams effectively
 
 ## Tech Stack
 
-Our template uses a modern JavaScript/TypeScript stack:
+Our template uses a modern TypeScript stack:
 
 ### Frontend
 
 - React for UI components
 - React Router v7 for navigation
-- styled-components for styling
 - Supabase for authentication
 
 ### Backend
