@@ -80,36 +80,17 @@ const config: Config = {
       respectPrefersColorScheme: false,
     },
     navbar: {
-      title: "Develop & Innovate for Social Change",
-      logo: {
-        alt: "DISC Logo",
-        src: "img/disc-logo.png",
-        href: "https://disc-nu.github.io/disc-website/",
-      },
+      title: "Sokana CRM",
       items: [
         {
           type: "doc",
           docId: "intro",
           position: "left",
-          label: "Workshop Series",
-          docsPluginId: "workshop-series",
-        },
-        {
-          type: "doc",
-          docId: "intro",
-          position: "left",
-          label: "DISC Website",
-          docsPluginId: "disc-website",
-        },
-        {
-          type: "doc",
-          docId: "intro",
-          position: "left",
-          label: "Discover Program Template",
+          label: "Documentation",
           docsPluginId: "discover-program-template-project",
         },
         {
-          href: "https://github.com/DISC-NU/DISC-Documentation-Website",
+          href: "https://github.com/sokanacollectivecrm/documentation",
           label: "GitHub",
           position: "right",
         },
@@ -122,34 +103,13 @@ const config: Config = {
           title: "Documentation",
           items: [
             {
-              label: "Workshop Series",
-              to: "/",
-            },
-            {
-              label: "DISC Website",
-              href: "/disc-website/intro",
-            },
-            {
-              label: "Discover Program Template",
+              label: "Sokana CRM Documentation",
               to: "/discover-program-template-project/intro",
             },
           ],
         },
-        {
-          title: "Community",
-          items: [
-            {
-              label: "DISC Website",
-              href: "https://disc-nu.github.io/disc-website/",
-            },
-            {
-              label: "GitHub",
-              href: "https://github.com/DISC-NU",
-            },
-          ],
-        },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Develop and Innovate for Social Change`,
+      copyright: `Copyright © ${new Date().getFullYear()} Sokana CRM`,
     },
     prism: {
       theme: prismThemes.github,
