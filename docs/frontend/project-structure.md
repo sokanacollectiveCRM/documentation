@@ -1,16 +1,18 @@
 ---
 id: project-structure
-title: Frontend Project Structure
-sidebar_position: 2
+sidebar_position: 4
 ---
 
-# Frontend Project Structure
+# Project Structure
 
-The frontend template follows a modular React architecture designed for scalability and maintainability. This document explains the organization of the project and the purpose of each directory.
+This guide provides a detailed overview of the frontend of the SokanaCRM.
 
-## Directory Overview
+## Directory Structure
 
-```bash
+The project follows a modular structure optimized for Next.js development:
+
+```
+.
 ├── src/                          # Source code root
 │   ├── App.css                   # Main application styles
 │   ├── App.tsx                   # Main application component
@@ -32,6 +34,8 @@ The frontend template follows a modular React architecture designed for scalabil
 │   │   │   ├── user/             # User-related components
 │   │   │
 │   │   ├── contexts/             # React contexts
+│   │   │   ├── search-context.tsx
+│   │   │   ├── UserContext.tsx
 │   │   │
 │   │   ├── data/                 # Static data
 │   │   │   ├── sidebar-data.ts   # Sidebar navigation data
@@ -109,135 +113,173 @@ The frontend template follows a modular React architecture designed for scalabil
 │       ├── utils.ts              # Generic utilities
 ```
 
-## Core Directories
+## Key Directories Explained
 
-### `src/` Directory
+### Features Directory (`/features`)
 
-The source directory contains all application code, organized into specific subdirectories based on functionality.
+The features directory contains each individual feature of the CRM
 
-### `assets/`
+- `admin-payment`
+- `auth` 
+- `clients`
+- `dashboard-home`
+- `my-account`
+- `not-found`
+- `pipeline`
+- `profiles`
+- `request`
 
-Contains static files that are not code:
+### Hours Directory (`/hours`)
 
-- `icons/`: SVG icon files used throughout the application
-- Images, fonts, and other media files
+The hours directory contains components allowing doulas and admins to input work session hours.
 
-### `common/`
+- `Hours.tsx`: Main page hosting the hours page
+- `HoursRoute.tsx`: Provides the routing to hours page
+- `/components`: Directory containing components that handle the logic of the table displayed
+- `/context/clients-context`: Contains the React context for the table, also the typescript type of each row
+- `/data/schema`: Contains zod schemas for the client info
 
-Houses shared resources used across multiple pages:
+### App Directory (`/app`)
 
-- `components/`: Reusable React components
-- `contexts/`: React context providers and consumers
-- `hooks/`: Custom React hooks
-- `layouts/`: Page layout components for routing
-- `utils/`: Helper functions and utilities
-- `data/`: Anything shared data or interfaces/enums 
+The app directory contains the core Next.js application logic:
 
-### `features/`
+- **about/**: About page routing and components
 
-Contains components and logic for features implemented, including their pages:
+  - `layout.tsx`: Layout for about pages
+  - `page.tsx`: About page implementation
 
-- `admin-payment/`: Features related to credit cards and payments. 
-  - This page should not be used anymore because we are integrating with Quickbooks instead. 
-  - It's active for now just for testing purposes.
-- `auth/`: Sign up, login, everything auth related. 
-  - Some of the pages are still jsx (which should to be fixed at some point).
-- `clients/`: Includes client table (which shows all clients). 
-  - Can drag and drop a template onto a client to initiate a contract. 
-  - Archive feature needs to be implemented (in the backend)
-  - Clicking on client brings you to their specific page
-- `dashboard-home/`: Needs to be deleted (deprecated)
-  - Because it expects a username (not what we're doing anymore)
-- `my-account/`: Displays your account information. 
-  - In the future, the view will be like 
-- `not-found/`: 404 page
-- `pipeline/`: Drag and drop functionality
-- `profiles/`: ==PLZ FILL WHOEVER IMPLEMENTED THIS==
-- `request/`: ==PLZ FILL WHOEVER IMPLEMENTED THIS==
+- **content/**: Main content routing
 
-### Root Files
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
-- `App.jsx`: Application entry point, contains:
-  - Global context providers
-  - Routing configuration
-  - Top-level layout
-- `App.css`: Global stylesheet
+  - `[[...slug]]/page.tsx`: Dynamic routing for content
+  - `layout.tsx`: Content pages layout
 
-## Protected Files
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
+- **schedule/**: Workshop schedule implementation
+  - Similar structure to content directory
 
-The following files should not be modified directly:
+### Components Directory (`/components`)
 
-```bash
-├── .vscode/           # VSCode settings
-├── build/            # Production build output
-├── node_modules/     # Project dependencies
-├── eslint.config.mjs # Linting configuration
-├── jsconfig.json     # JS compilation settings
-├── package-lock.json # Dependency lock file
-└── package.json      # Project metadata
+Contains all reusable UI components:
+
+#### Markdown Components (`/components/markdown`)
+
+- `copy.tsx`: Copy button functionality
+- `image.tsx`: Image rendering
+- `link.tsx`: Link handling
+- `note.tsx`: Note blocks
+- `pre.tsx`: Code block handling
+- `stepper.tsx`: Step-by-step guides
+
+#### UI Components (`/components/ui`)
+
+- `accordion.tsx`: Collapsible sections
+- `avatar.tsx`: User avatars
+- `breadcrumb.tsx`: Navigation breadcrumbs
+- `button.tsx`: Button components
+- `dialog.tsx`: Modal dialogs
+- `dropdown-menu.tsx`: Dropdown menus
+- `sheet.tsx`: Slide-out panels
+- `tabs.tsx`: Tab navigation
+
+#### Navigation Components
+
+- `Leftbar.tsx`: Left sidebar navigation
+- `navbar.tsx`: Top navigation bar
+- `menu-bar.tsx`: Mobile menu
+- `pagination.tsx`: Content pagination
+
+#### Utility Components
+
+- `search.tsx`: Search functionality
+- `theme-toggle.tsx`: Dark/light mode toggle
+- `toc.tsx`: Table of contents
+
+### Contents Directory (`/contents`)
+
+Organized content in MDX format:
+
+```
+contents/
+├── about/
+│   └── index.mdx
+├── content/
+│   ├── assignments/
+│   │   └── [assignment-1...9]/
+│   ├── getting-started/
+│   │   ├── faq/
+│   │   ├── introduction/
+│   │   └── quick-start-guide/
+│   └── workshops/
+│       └── [workshop-1...9]/
+└── schedule/
+    └── index.mdx
 ```
 
-These files are essential for project configuration:
+### Library Directory (`/lib`)
 
-- `.vscode/`: Editor-specific settings (e.g., format on save)
-- `build/`: Generated during production builds
-- `node_modules/`: Managed by npm
-- Configuration files: Maintain consistent code style and behavior
+Utility functions and configurations:
 
-## Adding New Features
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
+- `markdown.ts`: MDX processing utilities
+- `routes-config.ts`: Route configurations
+- `utils.ts`: General utilities
 
-When adding new features to the frontend:
+## Configuration Files
 
-1. Create a new directory in `pages/` for page-specific components
-2. Add shared components to `common/components/`
-3. Create custom hooks in `common/hooks/` if needed
-4. Add new contexts in `common/contexts/` for state management
-5. Update routing in `App.jsx`
+Key configuration files include:
 
-## Component Organization
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
+- `next.config.mjs`: Next.js configuration
+- `tailwind.config.ts`: Tailwind CSS configuration
+- `tsconfig.json`: TypeScript configuration
+- `components.json`: UI component configurations
 
-Each component should:
+## Static Assets
 
-- Have its own directory if it has associated files
-- Use `.jsx` extension if it contains JSX
-- Include any component-specific styles, tests, or utilities
-- Define PropTypes for all props
+The `/public` directory contains:
 
-Example component structure:
+- `disc-logo.png`: DISC logo
+- `public-og.png`: Open Graph image
+- Other static assets
 
-```bash
-ComponentName/
-├── index.jsx         # Main component file
-├── styles.js         # Styled components
-├── utils.js          # Component-specific utilities
-└── ComponentName.test.jsx
-```
+## Style System
+
+The project uses a combination of:
+
+1. **Tailwind CSS**: Utility-first styling
+2. **Global CSS**: In `styles/globals.css`
+3. **Syntax Highlighting**: In `styles/syntax.css`
 
 ## Best Practices
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
 
+When working with this structure:
 
-- Keep components focused and single-purpose
-- Follow the established directory structure
-- Use absolute imports from `src/` directory
-- Group imports according to the specified order:
-  1. React imports
-  2. Third-party modules
-  3. Absolute paths from `src/`
-  4. Relative paths
-- Maintain consistent code formatting using provided ESLint and Prettier configs
+1. **Component Organization**
 
-## Dependencies
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
+   - Keep components focused and single-purpose
+   - Use proper naming conventions
+   - Group related components together
 
-The project uses several key dependencies:
+2. **Content Management**
 
-- [React Router DOM](https://reactrouter.com/) for routing
-- [styled-components](https://styled-components.com/) for styling
-- [prop-types](https://www.npmjs.com/package/prop-types) for type checking
-- Prettier and ESLint for code formatting
+   - Follow MDX file structure
+   - Keep content organized in appropriate directories
+   - Use consistent frontmatter
 
-These dependencies are pre-configured for the DISCover Program's needs and ensure consistency across all projects.
+3. **Code Organization**
+   - Follow TypeScript best practices
+   - Keep utility functions in `/lib`
+   - Use proper imports/exports
+
+## Further Reading
+
+- [Next.js App Router Documentation](https://nextjs.org/docs/app)
+- [MDX Documentation](https://mdxjs.com/)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+## Contributing
+
+When adding new components or content:
+
+1. Follow the existing directory structure
+2. Use appropriate naming conventions
+3. Update relevant documentation
+4. Add necessary tests
+5. Follow the established coding style
