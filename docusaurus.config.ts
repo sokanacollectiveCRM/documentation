@@ -3,15 +3,15 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
 const config: Config = {
-  title: "DISC Documentation",
-  tagline: "Documentation for DISC Projects",
+  title: "SokanaCRM Documentation",
+  tagline: "Documentation for the Sokana CRM",
   favicon: "img/favicon.ico",
 
-  url: "https://docs.discnu.org",
+  url: "https://documentation-theta-blush.vercel.app/",
   baseUrl: "/",
 
-  organizationName: "DISC-NU",
-  projectName: "DISC-Documentation-Website",
+  organizationName: "SCRM-NU",
+  projectName: "SCRM-Documentation-Website",
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
