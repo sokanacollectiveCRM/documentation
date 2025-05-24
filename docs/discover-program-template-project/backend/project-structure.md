@@ -13,18 +13,64 @@ The backend template follows a domain driven design designed to be scalable and 
 ```bash
 backend/
 ├── src/
-│   ├── controllers/    # Entry for requests
-│   ├── domains/        # errors and processing (typically stores business logic, but structure was not followed during development)
-│   ├── entities/       # business logic
-│   ├── middleware/     # authentication/role checking
-│   └── repositories/   # database handling
-│   └── routes/         # route handling
-│   └── services/       # basic supabase services
-│   └── usecase/        # error checking and forwarding
-│   └── index.ts        # class instantiation
-│   └── server.ts       # root entry
-│   └── supabase.ts     # supabase client
-│   └── types.ts        # type definition
+│   ├── controllers/           # Handles HTTP requests and responses
+│   │   ├── authController.ts      # Authentication operations
+│   │   ├── clientController.ts    # Client management
+│   │   ├── contractController.ts  # Contract generation and management
+│   │   ├── EmailController.ts     # Email notifications
+│   │   ├── RequestFormController.ts # Service request forms
+│   │   └── userController.ts      # User operations and hours tracking
+│   │
+│   ├── domains/               # Domain errors and exceptions
+│   │   └── errors/            # Error type definitions
+│   │
+│   ├── entities/              # Core business models
+│   │   ├── Client.ts          # Client entity
+│   │   ├── Hours.ts           # Work hour tracking
+│   │   ├── RequestForm.ts     # Service request data
+│   │   ├── Template.ts        # Contract templates
+│   │   └── User.ts            # User entity
+│   │
+│   ├── middleware/            # Request processing middleware
+│   │   ├── authMiddleware.ts  # Authentication checks
+│   │   └── authorizeRoles.ts  # Role-based access control
+│   │
+│   ├── repositories/          # Data access layer
+│   │   ├── interface/         # Repository interfaces
+│   │   │   ├── clientRepository.ts
+│   │   │   └── userRepository.ts
+│   │   ├── requestFormRepository.ts
+│   │   ├── supabaseClientRepository.ts
+│   │   └── supabaseUserRepository.ts
+│   │
+│   ├── routes/                # API route definitions
+│   │   ├── authRoutes.ts      # Authentication endpoints
+│   │   ├── clientRoutes.ts    # Client management endpoints
+│   │   ├── contractRoutes.ts  # Contract operations
+│   │   ├── doulaRoutes.ts     # Doula-specific endpoints
+│   │   ├── EmailRoutes.ts     # Email notification endpoints
+│   │   ├── requestRoute.ts    # Service request endpoints
+│   │   └── specificUserRoutes.ts # User-specific operations
+│   │
+│   ├── services/              # External service integrations
+│   │   ├── interface/         # Service interfaces
+│   │   ├── RequestFormService.ts
+│   │   ├── supabaseAuthService.ts
+│   │   └── supabaseContractService.ts
+│   │
+│   ├── usecase/               # Application business logic
+│   │   ├── authUseCase.ts     # Authentication logic
+│   │   ├── clientUseCase.ts   # Client operations
+│   │   ├── contractUseCase.ts # Contract handling
+│   │   └── userUseCase.ts     # User operations
+│   │
+│   ├── utils/                 # Utility functions
+│   │   └── convertToPdf.ts    # PDF conversion
+│   │
+│   ├── index.ts               # Application initialization
+│   ├── server.ts              # Express server setup
+│   ├── supabase.ts            # Supabase client configuration
+│   └── types.ts               # Type definitions
 
 ```
 
