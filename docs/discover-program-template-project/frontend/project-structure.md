@@ -155,6 +155,33 @@ Contains components and logic for features implemented, including their pages:
 - `profiles/`: ==PLZ FILL WHOEVER IMPLEMENTED THIS==
 - `request/`: ==PLZ FILL WHOEVER IMPLEMENTED THIS==
 
+### Hours Directory (`/hours`)
+
+The hours directory contains components allowing doulas and admins to input work session hours.
+
+- `Hours.tsx`: Main page hosting the hours page
+- `HoursRoute.tsx`: Provides the routing to hours page
+- `/components`: Directory containing components that handle the logic of the table displayed
+- `/context/clients-context`: Contains the React context for the table, also the typescript type of each row
+- `/data/schema`: Contains zod schemas for the client info
+
+### (`admin-payment/`)
+
+### (`auth/`)
+
+### (`dashboard-home/`)
+
+### (`my-account/`)
+
+### (`not-found/`)
+
+### (`pipeline/`)
+
+### (`profiles/`)
+
+### (`request/`)
+
+
 ### Root Files
 - `App.jsx`: Application entry point, contains:
   - Global context providers
