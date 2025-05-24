@@ -173,6 +173,15 @@ The hours directory contains components allowing doulas and admins to input work
 
 ### (`my-account/`)
 
+The my-account directory contains components for viewing and updating your account information
+
+- `/MyAccount.tsx`: Main page hosting the feature
+- `/MyAccountRoutes.tsx`: Routing for this component
+- `/components/MyAccountForms.tsx`: For switching between Profile view and Account view
+  - Uses Shadcn `Tabs` component
+- `/components/UpdateAccount.tsx`: Form logic for Account details
+- `/components/UpdateProfile.tsx`: Form logic for Profile details
+
 ### (`not-found/`)
 
 ### (`pipeline/`)
