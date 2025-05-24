@@ -156,26 +156,31 @@ Contains components and logic for features implemented, including their pages:
 - `request/`: ==PLZ FILL WHOEVER IMPLEMENTED THIS==
 
 ### Root Files
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
 - `App.jsx`: Application entry point, contains:
   - Global context providers
   - Routing configuration
   - Top-level layout
-- `App.css`: Global stylesheet
+- `App.css`: Global stylesheet, contains color settings for our Shadcn-based components 
 
 ## Protected Files
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
-
 The following files should not be modified directly:
 
 ```bash
-├── .vscode/           # VSCode settings
-├── build/            # Production build output
-├── node_modules/     # Project dependencies
-├── eslint.config.mjs # Linting configuration
-├── jsconfig.json     # JS compilation settings
-├── package-lock.json # Dependency lock file
-└── package.json      # Project metadata
+├── .vscode/            # VSCode settings
+├── build/              # Production build output
+├── node_modules/       # Project dependencies
+├── eslint.config.mjs   # Linting configuration
+├── jsconfig.json       # JS compilation settings
+├── package-lock.json   # Dependency lock file
+└── package.json        # Project metadata
+└── tsconfig.json       # Main typescript compilation settings
+└── tsconfig.node.json  # Configuration for Node.js environments
+└── tsconfig.app.json   # App-specific typecsript settings (we only have 1 app so not pertinent to a specific app)
+└── tsconfig.build.json # Typescript configuration for build outputs
+└── vercel.json         # Vercel configurations
+└── vite.config.ts      # Vite configurations
+└── vite-env.d.ts       # Provides type definitions for vite-specific features
+
 ```
 
 These files are essential for project configuration:
@@ -186,15 +191,13 @@ These files are essential for project configuration:
 - Configuration files: Maintain consistent code style and behavior
 
 ## Adding New Features
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
-
 When adding new features to the frontend:
 
-1. Create a new directory in `pages/` for page-specific components
+1. Create a new directory in `features/` for your feature
 2. Add shared components to `common/components/`
-3. Create custom hooks in `common/hooks/` if needed
+3. Create custom hooks in `common/hooks/` if needed (put it under the appropriate directory, ie `user/`, `doulas/`, etc)
 4. Add new contexts in `common/contexts/` for state management
-5. Update routing in `App.jsx`
+5. Create your route in your directory under `features/` and include it in `src/Routes.tsx`
 
 ## Component Organization
 # THIS SECTION IS NOT EDITED (NEED TO FILL)
