@@ -199,39 +199,13 @@ When adding new features to the frontend:
 4. Add new contexts in `common/contexts/` for state management
 5. Create your route in your directory under `features/` and include it in `src/Routes.tsx`
 
-## Component Organization
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
-
-Each component should:
-
-- Have its own directory if it has associated files
-- Use `.jsx` extension if it contains JSX
-- Include any component-specific styles, tests, or utilities
-- Define PropTypes for all props
-
-Example component structure:
-
-```bash
-ComponentName/
-├── index.jsx         # Main component file
-├── styles.js         # Styled components
-├── utils.js          # Component-specific utilities
-└── ComponentName.test.jsx
-```
-
 ## Best Practices
 # THIS SECTION IS NOT EDITED (NEED TO FILL)
 
-
-- Keep components focused and single-purpose
+- Keep features focused and single-purpose
 - Follow the established directory structure
-- Use absolute imports from `src/` directory
-- Group imports according to the specified order:
-  1. React imports
-  2. Third-party modules
-  3. Absolute paths from `src/`
-  4. Relative paths
-- Maintain consistent code formatting using provided ESLint and Prettier configs
+- Use typescript
+- Use absolute imports with `@/...` directory for shared files, or relative imports for feature-specific files under your specific feature directory
 
 ## Dependencies
 # THIS SECTION IS NOT EDITED (NEED TO FILL)
@@ -239,8 +213,15 @@ ComponentName/
 The project uses several key dependencies:
 
 - [React Router DOM](https://reactrouter.com/) for routing
-- [styled-components](https://styled-components.com/) for styling
+- [Tailwind](https://tailwindcss.com/) for styling (almost all Tailwind-CSS, definitely all Shadcn components)
 - [prop-types](https://www.npmjs.com/package/prop-types) for type checking
-- Prettier and ESLint for code formatting
 
 These dependencies are pre-configured for the DISCover Program's needs and ensure consistency across all projects.
+
+## Tools Utilized
+
+These are tools the frontend has noteably leveraged:
+- [Shadcn](https://ui.shadcn.com/) for ready-made components
+- [Shadcn admin dashboard repo](https://github.com/satnaing/shadcn-admin) for several components' logic and functionality
+- [Zod](https://zod.dev/) for form schema validation
+- [Vite](https://vitejs.dev/) for fast development server and optimized builds
