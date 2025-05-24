@@ -200,7 +200,6 @@ When adding new features to the frontend:
 5. Create your route in your directory under `features/` and include it in `src/Routes.tsx`
 
 ## Best Practices
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
 
 - Keep features focused and single-purpose
 - Follow the established directory structure
@@ -208,7 +207,6 @@ When adding new features to the frontend:
 - Use absolute imports with `@/...` directory for shared files, or relative imports for feature-specific files under your specific feature directory
 
 ## Dependencies
-# THIS SECTION IS NOT EDITED (NEED TO FILL)
 
 The project uses several key dependencies:
 
