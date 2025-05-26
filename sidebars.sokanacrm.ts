@@ -1,6 +1,6 @@
 import type { SidebarsConfig } from "@docusaurus/plugin-content-docs";
 
-const discoverProgramSidebar: SidebarsConfig = {
+const sokanacrmSidebar: SidebarsConfig = {
   tutorialSidebar: [
     {
       type: "doc",
@@ -13,25 +13,9 @@ const discoverProgramSidebar: SidebarsConfig = {
       label: "Getting Started",
     },
     {
-      type: "category",
-      label: "Project Management",
-      items: [
-        {
-          type: "doc",
-          id: "project-management/issue-tracking",
-          label: "Issue Tracking",
-        },
-        {
-          type: "doc",
-          id: "project-management/project-management",
-          label: "Branch Protections",
-        },
-        {
-          type: "doc",
-          id: "project-management/pull-requests",
-          label: "Pull Requests",
-        },
-      ],
+      type: "doc",
+      id: "authentication",
+      label: "Authentication",
     },
     {
       type: "category",
@@ -44,18 +28,18 @@ const discoverProgramSidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "frontend/development",
-          label: "Development Guide",
+          id: "frontend/layout",
+          label: "Website Layout",
+        },
+        {
+          type: "doc",
+          id: "frontend/features",
+          label: "Features",
         },
         {
           type: "doc",
           id: "frontend/deployment",
           label: "Deployment",
-        },
-        {
-          type: "doc",
-          id: "frontend/contributing",
-          label: "Contributing",
         },
       ],
     },
@@ -78,14 +62,30 @@ const discoverProgramSidebar: SidebarsConfig = {
           id: "backend/deployment",
           label: "Deployment",
         },
+      ],
+    },
+    {
+      type: "category",
+      label: "Handoff Documentation",
+      items: [
         {
           type: "doc",
-          id: "backend/contributing",
-          label: "Contributing",
+          id: "handoff/overview",
+          label: "Overview",
+        },
+        {
+          type: "doc",
+          id: "handoff/progress",
+          label: "Progress",
+        },
+        {
+          type: "doc",
+          id: "handoff/next-steps",
+          label: "Next Steps",
         },
       ],
     },
   ],
 };
 
-export default discoverProgramSidebar;
+export default sokanacrmSidebar;

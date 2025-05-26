@@ -8,7 +8,7 @@ sidebar_position: 1
 
 ### Login to the provided Github account
 
-1. We have provided a dedicated Github account for the project. Follow this [link](https://docs.google.com/document/d/1XxuBfhTmrafgHsZHrzHwQyeqGB8e__duY9SmgVo0VEc/edit?usp=sharing) to get access to the credentials.
+We have provided a dedicated Github account for the project. Follow this [link](https://docs.google.com/document/d/1XxuBfhTmrafgHsZHrzHwQyeqGB8e__duY9SmgVo0VEc/edit?usp=sharing) to get access to the credentials.
 
 ## Prerequisites
 
@@ -88,7 +88,7 @@ NODE_ENV=development # NOTE: you should change this to `production` when you dep
 ```
 :::info
 
-You can find the supabase keys using the supabase account details from this [link](https://docs.google.com/document/d/1XxuBfhTmrafgHsZHrzHwQyeqGB8e__duY9SmgVo0VEc/edit?usp=sharing)
+You can find the supabase keys using the supabase account details from this [link](https://docs.google.com/document/d/1XxuBfhTmrafgHsZHrzHwQyeqGB8e__duY9SmgVo0VEc/edit?usp=sharing). In general, we are reusing the same email and password across multiple platforms. If a login isn't working, it is **HIGHLY LIKELY** that you need to login through Github or Google Oauth instead.
 
 :::
 
@@ -121,6 +121,23 @@ Frontend server will start at `http://localhost:3001`
 After you have gone through all of these steps, you should be able to create users, see them populate on Supabase, and have them displayed on your web app after logging in.
 
 You should also get emails from Supabase whenever you first sign-up and requests a password. All of the respective pages on the frontend should work with this as well.
+
+**Please** check that you are running the correct directories. Running another project's backend can cause confusion and lead to unnecessary changes without realizing that there is no bug. **Double check whenever you are unsure of a critical bug**.
+
+## Google Cloud Console
+
+Google Oauth is provided as an alternative and secure way to login. Although it is already configured, you will need to reconfigure the URL if you decide to change deployment or backend provider.
+
+To configure OAuth, you must log in to the Google Cloud Console provided with the sokana email. Again, these credentials are provided in the private document.
+
+1. Head over to the sidebar.
+2. Click on 'APIs & Services'
+3. Go to Oauth Consent Screen
+4. Clients
+5. Sokana Collective CRM
+6. You should see the redirect URL's for Oauth. Configure as you need.
+
+You will also need to reflect these changes in Supabase under authentication -> Google.
 
 ## Development Tools
 

@@ -78,33 +78,46 @@ backend/
 
 ### `src/` Directory
 
-The source directory contains all the application code. Everything is organized into specific subdirectories based on their functionality.
-
-### `config/`
-
-Contains configuration files for external services and application settings.
-
-- `supabase.js`: Configuration for Supabase database connection and authentication
-
-### `controllers/`
-
-Houses the business logic for the application, separating it from the route definitions.
-
-- `authController.js`: Handles user authentication and authorization logic
-
-### `middleware/`
-
-Contains Express middleware functions that process requests before they reach the route handlers.
-
-- `authMiddleware.js`: Handles authentication verification and user session management
+The main source folder containing all application logic. It is organized into domain-driven subdirectories following clean architecture principles (e.g., controllers, use cases, repositories, etc.).
 
 ### `routes/`
 
-Defines API endpoints and connects them to their corresponding controllers.
+Entry point for all API requests.
 
-- `authRoutes.js`: Authentication-related routes (login, signup, etc.)
+### `controllers/`
 
-### `server.js`
+Contains the logic for handling HTTP requests. Controllers receive input from routes, invoke use cases, and return responses. Controllers should never directly interact with
+a repository or service, it is solely to handle requests and responses.
+
+### `usecases/`
+
+Implements application-specific logic using entities and repositories. These represent “actions” a user or system can perform. These also should not directly handle a database action, nor should it directly front a request. This acts as a reusable piece of logic that works with any kind of database service.
+
+### `services/`
+
+Contains service logic for external APIs, utilities, and third-party integrations that don’t belong directly in business logic.
+
+### `repositories/`
+
+Defines interfaces and implementations for database requests. Repositories abstract how data is fetched or stored (e.g., from Supabase, PostgreSQL, etc.).
+
+### `middleware/`
+
+Express middleware functions that intercept requests for authentication, logging, validation, and role checking.
+
+### `domains/`
+
+Error checking abstractions
+
+### `entities/`
+
+Classes that represent business logic, such as users, clients, request forms, etc.
+
+### `utils/`
+
+Contains reusable functions.
+
+### `server.ts`
 
 The main application file that:
 
@@ -113,6 +126,18 @@ The main application file that:
 - Connects routes
 - Configures error handling
 - Starts the server
+
+### `index.ts`
+
+Initializes all the instances of repositories and services to be reused across the application.
+
+### `supabase.ts`
+
+Initializes the supabase client
+
+### `types.ts`
+
+Defines basic type signatures, mostly used to define modified Requests that are passed to a controller from a middleware.
 
 ## Protected Files
 
@@ -136,8 +161,12 @@ These files are essential for the project's configuration and dependencies:
 When adding new features to the backend:
 
 1. Create new route files in the `routes/` directory for new API endpoints
+- If private, use the provided authMiddleware to check for authentication before querying.
+- Specify the roles that are allowed to access this endpoint using authorizeRoles with an array of strings to specify which roles are allowed.
 2. Add corresponding controller files in the `controllers/` directory
-3. If needed, create new middleware in the `middleware/` directory
+3. Add a corresponding use case to define the interactinos between the controller and its services/repositories
+4. Add to a service or repository to both the interface and supabase equivalent if the function is related to an already established service.
+5. If needed, create an interface AND supabase implementation of that interface.
 4. Update the main `server.js` file to include new routes
 
 ## Best Practices
@@ -152,8 +181,6 @@ When adding new features to the backend:
 
 The project includes several configuration files in the root directory:
 
-- `jsconfig.json`: JavaScript language service configuration
+- `tsconfig.json`: JavaScript language service configuration
 - `eslint.config.mjs`: Code style and linting rules
 - `package.json`: Project dependencies and scripts
-
-These files are pre-configured for the DISCover Program's needs and ensure consistency across all projects.
