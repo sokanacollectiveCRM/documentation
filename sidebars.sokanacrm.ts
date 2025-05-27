@@ -54,8 +54,8 @@ const sokanacrmSidebar: SidebarsConfig = {
         },
         {
           type: "doc",
-          id: "backend/development",
-          label: "Development Guide",
+          id: "backend/implementation",
+          label: "Implementation",
         },
         {
           type: "doc",
