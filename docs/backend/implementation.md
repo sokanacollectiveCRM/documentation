@@ -6,7 +6,9 @@ sidebar_position: 2
 
 ## Overview
 
-This page serves as a basic overview of how we used supabase to implement the functions defined in our interfaces.
+## Supabase Implementation
+
+This section serves as a basic overview of how we used supabase to implement the functions defined in our interfaces.
 
 ### PDF creation
 
@@ -20,7 +22,7 @@ We have made the following fields to be autofilled using these keywords:
 - `{fee}`
 - `{deposit}`
 
-Whereever these keywords are used in a document, our route will use the library **docx-templater** to populate those fields.
+Whereever these keywords are used in a document, our route will use the library **docx-templater** to populate those fields. **This is case sensitive**.
 
 This generated document is then converted to a pdf using **docx-pdf**, and then sent back to the caller as a buffer.
 
@@ -49,3 +51,13 @@ To account for these scenarios, our client fetches utilise a join function. In p
 Firstly, first name and last name are both in the users table and client_info table. If a client signs up and happens to change their name, the information from the users table will be prioritized (when fetching) because it is more recent. If the user is null (they can't sign up yet), then we just use the information from the request form.
 
 This is outlined in `mapToClient()`. We first check if the user join is null. If it is, create a User entity with information from the request form. If the user is indeed valid, then use that for the User entity instead.
+
+## General Implementation
+
+### Lite vs Detailed Clients
+
+To start, the `client` entity under `entities/client` has many optional fields. The reason for this is due to how our client fetches work. 
+
+Our client fetch has two modes: Lite and Detailed. If you add a `?detailed=true` param to the end of your client fetch, you will grab a fully filled Client entity. If not, only a slightly filled Client entity is returned with basic fields like name, email, and status are filled.
+
+This is intended to improve security, privacy, and performance. With this method, when you grab all the clients from the backend, you are only fetching 5-6 fields per entry instead of 15+. This will be especially apparent once we hit 100+ clients.
