@@ -74,7 +74,7 @@ npm i
 touch .env
 ```
 
-8. Copt this template for the backend `.env`
+8. Copy this template for the backend `.env`
 
 ```javascript
 SUPABASE_URL= #your supabase url here
