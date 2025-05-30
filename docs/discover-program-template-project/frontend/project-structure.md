@@ -146,6 +146,7 @@ Contains components and logic for features implemented, including their pages:
   - Can drag and drop a template onto a client to initiate a contract. 
   - Archive feature needs to be implemented (in the backend)
   - Clicking on client brings you to their specific page
+- `hours/`: 
 - `dashboard-home/`: Needs to be deleted (deprecated)
   - Because it expects a username (not what we're doing anymore)
 - `my-account/`: Displays your account information. 
