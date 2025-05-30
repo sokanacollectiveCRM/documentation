@@ -1,18 +1,16 @@
 ---
 id: project-structure
-sidebar_position: 4
+title: Frontend Project Structure
+sidebar_position: 1
 ---
 
-# Project Structure
+# Frontend Project Structure
 
-This guide provides a detailed overview of the frontend of the SokanaCRM.
+The frontend template follows a modular React architecture designed for scalability and maintainability. This document explains the organization of the project and the purpose of each directory.
 
-## Directory Structure
+## Directory Overview
 
-The project follows a modular structure optimized for Next.js development:
-
-```
-.
+```bash
 ├── src/                          # Source code root
 │   ├── App.css                   # Main application styles
 │   ├── App.tsx                   # Main application component
@@ -34,8 +32,6 @@ The project follows a modular structure optimized for Next.js development:
 │   │   │   ├── user/             # User-related components
 │   │   │
 │   │   ├── contexts/             # React contexts
-│   │   │   ├── search-context.tsx
-│   │   │   ├── UserContext.tsx
 │   │   │
 │   │   ├── data/                 # Static data
 │   │   │   ├── sidebar-data.ts   # Sidebar navigation data
@@ -113,173 +109,56 @@ The project follows a modular structure optimized for Next.js development:
 │       ├── utils.ts              # Generic utilities
 ```
 
-## Key Directories Explained
+## Core Directories
 
-### Features Directory (`/features`)
+### `src/` Directory
 
-The features directory contains each individual feature of the CRM
+The source directory contains all application code, organized into specific subdirectories based on functionality.
 
-- `admin-payment`
-- `auth` 
-- `clients`
-- `dashboard-home`
-- `my-account`
-- `not-found`
-- `pipeline`
-- `profiles`
-- `request`
+### `assets/`
 
-### Hours Directory (`/hours`)
+Contains static files that are not code:
 
-The hours directory contains components allowing doulas and admins to input work session hours.
+- `icons/`: SVG icon files used throughout the application
+- Images, fonts, and other media files
 
-- `Hours.tsx`: Main page hosting the hours page
-- `HoursRoute.tsx`: Provides the routing to hours page
-- `/components`: Directory containing components that handle the logic of the table displayed
-- `/context/clients-context`: Contains the React context for the table, also the typescript type of each row
-- `/data/schema`: Contains zod schemas for the client info
+### `common/`
 
-### App Directory (`/app`)
+Houses shared resources used across multiple pages:
 
-The app directory contains the core Next.js application logic:
+- `components/`: Reusable React components
+- `contexts/`: React context providers and consumers
+- `hooks/`: Custom React hooks
+- `layouts/`: Page layout components for routing
+- `utils/`: Helper functions and utilities
+- `data/`: Anything shared data or interfaces/enums 
 
-- **about/**: About page routing and components
+### `features/`
 
-  - `layout.tsx`: Layout for about pages
-  - `page.tsx`: About page implementation
+Features contains the bulk of the project, where routing and logic are defined for each feature.
 
-- **content/**: Main content routing
+### Root Files
+- `main.tsx`: Application entry point
+- `index.css`: Basic css using tailwind.
+- `App.tsx`: Contains:
+  - Global context providers
+  - Routing configuration
+- `App.css`: Global stylesheet, contains color settings for our Shadcn-based components 
+- `Routes.tsx`: Routing logic for every page.
+  - Each feature will have its own routing entry point to define pages for a given feature.
 
-  - `[[...slug]]/page.tsx`: Dynamic routing for content
-  - `layout.tsx`: Content pages layout
+## Dependencies
 
-- **schedule/**: Workshop schedule implementation
-  - Similar structure to content directory
+The project uses several key dependencies:
 
-### Components Directory (`/components`)
+- [React Router DOM](https://reactrouter.com/) for routing
+- [Tailwind](https://tailwindcss.com/) for styling (almost all Tailwind-CSS, definitely all Shadcn components)
 
-Contains all reusable UI components:
+## Tools Utilized
 
-#### Markdown Components (`/components/markdown`)
-
-- `copy.tsx`: Copy button functionality
-- `image.tsx`: Image rendering
-- `link.tsx`: Link handling
-- `note.tsx`: Note blocks
-- `pre.tsx`: Code block handling
-- `stepper.tsx`: Step-by-step guides
-
-#### UI Components (`/components/ui`)
-
-- `accordion.tsx`: Collapsible sections
-- `avatar.tsx`: User avatars
-- `breadcrumb.tsx`: Navigation breadcrumbs
-- `button.tsx`: Button components
-- `dialog.tsx`: Modal dialogs
-- `dropdown-menu.tsx`: Dropdown menus
-- `sheet.tsx`: Slide-out panels
-- `tabs.tsx`: Tab navigation
-
-#### Navigation Components
-
-- `Leftbar.tsx`: Left sidebar navigation
-- `navbar.tsx`: Top navigation bar
-- `menu-bar.tsx`: Mobile menu
-- `pagination.tsx`: Content pagination
-
-#### Utility Components
-
-- `search.tsx`: Search functionality
-- `theme-toggle.tsx`: Dark/light mode toggle
-- `toc.tsx`: Table of contents
-
-### Contents Directory (`/contents`)
-
-Organized content in MDX format:
-
-```
-contents/
-├── about/
-│   └── index.mdx
-├── content/
-│   ├── assignments/
-│   │   └── [assignment-1...9]/
-│   ├── getting-started/
-│   │   ├── faq/
-│   │   ├── introduction/
-│   │   └── quick-start-guide/
-│   └── workshops/
-│       └── [workshop-1...9]/
-└── schedule/
-    └── index.mdx
-```
-
-### Library Directory (`/lib`)
-
-Utility functions and configurations:
-
-- `markdown.ts`: MDX processing utilities
-- `routes-config.ts`: Route configurations
-- `utils.ts`: General utilities
-
-## Configuration Files
-
-Key configuration files include:
-
-- `next.config.mjs`: Next.js configuration
-- `tailwind.config.ts`: Tailwind CSS configuration
-- `tsconfig.json`: TypeScript configuration
-- `components.json`: UI component configurations
-
-## Static Assets
-
-The `/public` directory contains:
-
-- `disc-logo.png`: DISC logo
-- `public-og.png`: Open Graph image
-- Other static assets
-
-## Style System
-
-The project uses a combination of:
-
-1. **Tailwind CSS**: Utility-first styling
-2. **Global CSS**: In `styles/globals.css`
-3. **Syntax Highlighting**: In `styles/syntax.css`
-
-## Best Practices
-
-When working with this structure:
-
-1. **Component Organization**
-
-   - Keep components focused and single-purpose
-   - Use proper naming conventions
-   - Group related components together
-
-2. **Content Management**
-
-   - Follow MDX file structure
-   - Keep content organized in appropriate directories
-   - Use consistent frontmatter
-
-3. **Code Organization**
-   - Follow TypeScript best practices
-   - Keep utility functions in `/lib`
-   - Use proper imports/exports
-
-## Further Reading
-
-- [Next.js App Router Documentation](https://nextjs.org/docs/app)
-- [MDX Documentation](https://mdxjs.com/)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-
-## Contributing
-
-When adding new components or content:
-
-1. Follow the existing directory structure
-2. Use appropriate naming conventions
-3. Update relevant documentation
-4. Add necessary tests
-5. Follow the established coding style
+These are tools the frontend has noteably leveraged:
+- [Dndkit](https://dndkit.com) for drag and drop functionality
+- [Shadcn](https://ui.shadcn.com/) for ready-made components
+- [Shadcn admin dashboard repo](https://github.com/satnaing/shadcn-admin) for several components' logic and functionality
+- [Zod](https://zod.dev/) for form schema validation
+- [Vite](https://vitejs.dev/) for fast development server and optimized builds

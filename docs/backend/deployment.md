@@ -23,33 +23,24 @@ Make sure to set these in your Vercel project settings:
 ```bash
 FRONTEND_URL=your_frontend_url
 SUPABASE_URL=your_supabase_url
-SUPABASE_ANON_KEY=your_supabase_key
+SUPABASE_SERIVCE_ROLE_KEY=your_supabase_key
 NODE_ENV=production
 API_URL=you_api_url
 ```
 
-### Deployment Process
-
-1. Connect your GitHub repository to Vercel
-2. Vercel will automatically detect the Express.js application
-3. Configure your environment variables in the Vercel dashboard
-4. Deploy!
-
-### Automatic Deployments
-
-- Each push to `main` triggers a production deployment
-- Pull requests create preview deployments
-- Failed builds prevent merging to main
-
-### Monitoring
-
-- View deployment logs in the Vercel dashboard
-- Monitor API endpoints using Vercel Analytics
-- Check deployment status in GitHub checks
-
 ### Troubleshooting
 
-Common deployment issues:
+- Vercel expects absolute imports for files. If you want to import, let's say:
+
+    `import { User } from 'entities/User'`
+
+- This should instead be:
+
+    `import { User } from '../entities/User'`
+
+to make it ready for Vercel deployment.
+
+Also check:
 
 - Missing environment variables
 - Incorrect build settings
