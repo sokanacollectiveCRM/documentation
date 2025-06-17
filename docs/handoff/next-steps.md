@@ -87,11 +87,17 @@ These should be moved to a better fitting file if such exists, but will be kept 
 
 ### Improved PDF fidelity
 
-We use the library, `docx-pdf` to convert from a Docx file into a PDF. This library does NOT preserve style, so basic properties like text size, heading, alignment, and image size may not be preserved. For now, we believe this is a simple and usable approach.
+We **used** to use the library, `docx-pdf` to convert from a Docx file into a PDF. This library does NOT preserve style, so basic properties like text size, heading, alignment, and image size may not be preserved. For now, we believe this is a simple and usable approach.
+
+We recently switched over to use the library, `Cloud Convert` instead. This library is a subscription, third-party API. We are using the free tier, which has up to 10 conversions a day. This has much higher PDF-fidelity, but again, is limited and relies on a third party service to do the conversion for us.
+
+We believe having 10 conversions a day is plenty for the organization's use case. The issue is that right now, grabbing a preview of a template from the `templates` page dynamically generates one of these, using up a conversion. This is slow and unnecessary.
 
 #### Proposal
 
-We recommend using a more modern library to convert Docx files into PDFs. While we don't have any direct recommendations, we should acknowledge that this is not an entirely impossible task.
+If you want to keep the PDF conversion within the application, we recommend using a more modern library to convert Docx files into PDFs. `docx-pdf` is outdated, and we only used it because of how easy it is to setup. A more modern library might preserve more fidelity, but at the cost of simplicity and performance. If the organization is not too concerned about how the contract looks, then `docx-pdf` is perfectly suited. The code that we used for `docx-pdf` should be in a previous commit.
+
+If you like using the third-party service, either upgrade to a higher tier, or implement a PDF caching system. So, whenever the admin uploads a new template, also have the backend convert it to PDF using `Cloud Convert`, and then store the PDF buffer somewhere into the database. Then, just grab the buffer whenever you want to render it so you aren't generating a new PDF everytime (which uses a conversion). 
 
 ### Warnings for inactive clients
 
